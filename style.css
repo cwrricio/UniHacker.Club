@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/avenir');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Avenir', sans-serif;  
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {   
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.5rem 8%; /* Reduzido o padding vertical */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: 7%;
+}
+
+#navbarNav {
+    margin-right: 7%;
+}
+
+.navbar-brand img {
+    height: 80px; /* Reduzido o tamanho da logo */
+}
+
+
+.navbar-nav {
+    margin-left: auto; /* Alinha os links à direita */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Espaçamento uniforme entre os itens */
+}
+
+.navbar-nav .nav-link {
+    color: #333333; /* Cor padrão */
+    font-family: 'Avenir', sans-serif; 
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    margin-top: 45px; /* Ajustado para compensar a altura reduzida da navbar */
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-color: #212529;
+    height: 70vh; /* Ocupa 80% da altura da tela */
+    text-align: center; /* Garante alinhamento do texto */
+}
+
+.header h1 {
+   
+    font-family: "Silkscreen", serif;
+    font-size: clamp(1rem, 6vw, 10rem);
+    color: white;
+    padding: 0rem clamp(0rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    transition: color 0.5s ease;
+}
+
+.header h6 {
+    margin-top: 2px;
+    font-family: "Silkscreen", serif;
+    font-size: clamp(1rem, 2vw, 5rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    transition: color 0.5s ease;
+}
+
+#light-card {
+    margin-top: -3rem;
+    border-radius: 40px 40px 0 0;
+    background-color: #f8f9fa;
+}
+
+.blog-section {
+    margin-top: 20px;
+    padding: 60px 10px;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-blog {
+    max-width: 1400px; /* Increased max-width for better spacing */
+    padding: 0 30px;
+}
+
+.row-blog {
+    display: flex;
+    flex-wrap: nowrap; /* Impede que os cards quebrem linha */
+    justify-content: space-between; /* Espaçamento uniforme entre os cards */
+    align-items: stretch; /* Garante que os cards tenham alturas iguais */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+
+.col-lg-3 {
+    flex: 1; /* Distribui igualmente o espaço entre os 4 cards */
+    max-width: 23%; /* Garante que cada card ocupe 1/4 do espaço */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+.blog-card {
+    height: 500px;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-info img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.author {
+    color: var(--marrom);
+    font-weight: 500;
+}
+
+.card-title {
+    color: var(--marrom);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 2.4rem;
+}
+
+.card-text {
+    color: var(--marrom);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.views {
+    color: var(--marrom);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.bi-eye {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+    .row-blog {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        gap: 20px;
+    }
+    
+    .col-lg-3 {
+        width: calc(50% - 20px); /* Two cards per row on medium screens */
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-lg-3 {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row-blog {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    
+    .col-lg-3 {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+.row-blog    {
+    gap: 10px;
+}
+
+#nossa_equipe{
+    margin-top: 5px;
+    color: wheat;
+}
+
+/* Estilo para a seção customizada */
+.custom-section {
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the entire section horizontally */
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.row_img {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    gap: 40px; /* Add space between text and image columns */
+}
+
+ebookcol {
+    flex: 0 0 45%; /* Slightly reduce width to ensure consistent margins */
+    max-width: 45%;
+}
+/* Estilo para os títulos */
+.custom-section .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Espaçamento entre título e parágrafo */
+    line-height: 1.4; /* Altura da linha */
+}
+
+/* Estilo para os parágrafos */
+.custom-section .paragraph {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+    text-align: justify; /* Justifica o texto */
+}
+
+
+/* Estilo para as imagens */
+.custom-section img {
+    max-width: 40%;
+    height: auto;
+}
+
+.divimagens{
+    max-width: 50%;
+}
+
+/* Estilo para alinhar imagem e texto */
+.row_img {
+    display: flex;
+    flex-wrap: wrap; /* Para responsividade */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Adiciona espaço proporcional entre texto e imagem */
+    gap: 20px; /* Espaço entre elementos */
+    margin-bottom: 40px; /* Espaço entre as seções */
+    gap: 10px; /* Reduz o espaço entre os elementos */
+    margin-bottom: 30px; /* Espaço inferior da seção */
+}
+
+.ebookcol {
+    flex: 1 1 48%; /* Ajusta a largura de cada coluna */
+    max-width: 50%; /* Limita a largura máxima */
+}
+
+#ebook1,
+#ebook2 {
+    max-width: 35%; /* Reduz o tamanho da imagem */
+    height: auto; /* Mantém a proporção */
+    margin: 0; /* Remove margens extras */
+}
+
+#ebook1txt,
+#ebook2txt {
+    text-align: left; /* Alinha o texto à esquerda */
+    flex: 1 1 45%; /* Espaço ocupado pelo texto */
+    padding: 0 5px; /* Reduz o espaço lateral entre texto e imagem */
+}
+
+/* Botão de download */
+button {
+    display: block; /* Garante que o botão fique separado */
+    margin-top: 20px;
+}
+/* Estilo para os botões */
+button {
+    background-color:#049344;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block; /* Garante que o botão fique separado */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #049344;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    .custom-section .row {
+        flex-direction: column; /* Empilha texto e imagem em telas pequenas */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .custom-section .title {
+        font-size: 24px;
+    }
+
+    .custom-section .paragraph {
+        font-size: 14px;
+    }
+
+    .custom-section button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens dentro do container */
+}
+
+.footer .row {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza as colunas horizontalmente */
+    flex-wrap: wrap; /* Permite que as colunas quebrem linha se necessário */
+}
+
+.footer .col-md-4 {
+    margin: 10px 0; /* Adiciona espaço entre os blocos */
+}
+
+.footer .row.mt-3 .col-12 {
+    text-align: center; /* Garante que o texto do copyright esteja centralizado */
+}
+
+.footer a {
+    margin: 0 10px; /* Espaçamento horizontal entre os links */
+    display: inline-block; /* Para melhor controle do alinhamento */
+}
