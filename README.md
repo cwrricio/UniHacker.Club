@@ -1,1 +1,1 @@
-[# UniHacker.Club](https://cwrricio.github.io/UniHacker.Club/)
+https://cwrricio.github.io/UniHacker.Club/
